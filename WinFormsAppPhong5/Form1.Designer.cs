@@ -19,6 +19,11 @@
         private GroupBox groupShipping;
         private Label lblShippingType;
         private ComboBox cboShippingType;
+        private DataGridViewTextBoxColumn colName;
+        private DataGridViewTextBoxColumn colQty;
+        private DataGridViewTextBoxColumn colWeight;
+        private DataGridViewTextBoxColumn colUnitPrice;
+        private DataGridViewTextBoxColumn colTotal;
         private DataGridView dgvItems;
         private StatusStrip statusStrip;
         private ToolStripStatusLabel timerClock;
@@ -220,6 +225,41 @@
             dgvItems.RowHeadersWidth = 51;
             dgvItems.TabIndex = 0;
             dgvItems.BackgroundColor = SystemColors.ControlDark;
+            // Columns (defined so designer shows them)
+            colName = new DataGridViewTextBoxColumn();
+            colQty = new DataGridViewTextBoxColumn();
+            colWeight = new DataGridViewTextBoxColumn();
+            colUnitPrice = new DataGridViewTextBoxColumn();
+            colTotal = new DataGridViewTextBoxColumn();
+
+            // 
+            // colName
+            // 
+            colName.HeaderText = "Tên hàng";
+            colName.Name = "ItemName";
+            // 
+            // colQty
+            // 
+            colQty.HeaderText = "Số lượng";
+            colQty.Name = "Quantity";
+            // 
+            // colWeight
+            // 
+            colWeight.HeaderText = "Trọng lượng (kg)";
+            colWeight.Name = "WeightKg";
+            // 
+            // colUnitPrice
+            // 
+            colUnitPrice.HeaderText = "Đơn giá";
+            colUnitPrice.Name = "UnitPrice";
+            // 
+            // colTotal
+            // 
+            colTotal.HeaderText = "Thành tiền";
+            colTotal.Name = "Total";
+            colTotal.ReadOnly = true;
+
+            dgvItems.Columns.AddRange(new DataGridViewColumn[] { colName, colQty, colWeight, colUnitPrice, colTotal });
             // 
             // statusStrip
             // 

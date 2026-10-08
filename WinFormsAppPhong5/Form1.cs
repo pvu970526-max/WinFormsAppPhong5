@@ -25,17 +25,7 @@ namespace WinFormsAppPhong5
 
         private void Form1_Load(object? sender, EventArgs e)
         {
-            // Setup DataGridView columns
-            dgvItems.Columns.Clear();
-
-            var colName = new DataGridViewTextBoxColumn() { Name = "ItemName", HeaderText = "Tên hàng" };
-            var colQty = new DataGridViewTextBoxColumn() { Name = "Quantity", HeaderText = "Số lượng" };
-            var colWeight = new DataGridViewTextBoxColumn() { Name = "WeightKg", HeaderText = "Trọng lượng (kg)" };
-            var colUnitPrice = new DataGridViewTextBoxColumn() { Name = "UnitPrice", HeaderText = "Đơn giá" };
-            var colTotal = new DataGridViewTextBoxColumn() { Name = "Total", HeaderText = "Thành tiền", ReadOnly = true };
-
-            dgvItems.Columns.AddRange(new DataGridViewColumn[] { colName, colQty, colWeight, colUnitPrice, colTotal });
-
+            // Designer defines DataGridView columns so they are visible in the Form Designer.
             // sample shipping types
             cboShippingType.Items.Clear();
             cboShippingType.Items.AddRange(new object[] { "Tiêu chuẩn", "Hỏa tốc", "Giao ngay" });
